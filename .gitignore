@@ -1,0 +1,19 @@
+# Environment variables
+.env
+
+# IDE
+.idea/
+.vscode/
+
+# Dependencies
+/vendor
+
+# Build artifacts
+*.o
+*.a
+*.so
+.DS_Store
+
+# Generated files
+/bin
+/dist
