@@ -71,23 +71,19 @@ REST API сервис для обработки изображений с аси
 {
   "image": "data:image/jpeg;base64,/9j/4AAQSkZJRg...",
   "filter": {
-    "name": "blur",
+    "name": "sharpen",
     "parameters": {
-      "radius": 10
+      "amount": 1.5
     }
   }
 }
 ```
 
 **Поддерживаемые фильтры:**
-- `blur` - Размытие изображения
-  - Параметры: `{"radius": число}`
-- `grayscale` - Преобразование в оттенки серого
-  - Параметры: `{}`
-- `sepia` - Эффект сепия
-  - Параметры: `{"intensity": 0-100}`
 - `sharpen` - Повышение резкости
   - Параметры: `{"amount": число}`
+- `invert` - Инверсия цветов
+  - Параметры: `{}`
 
 **Ответ (200 OK):**
 ```json
@@ -179,8 +175,8 @@ Content-Type: image/png
 {
   "id": "task-uuid",
   "image_base": "data:image/jpeg;base64,...",
-  "filter_name": "blur",
-  "filter_parameters": "{\"radius\": 10}",
+  "filter_name": "sharpen",
+  "filter_parameters": "{\"amount\": 1.5}",
   "status": "completed",
   "result": "data:image/png;base64,iVBORw0KGgoAAAANSUhE..."
 }
